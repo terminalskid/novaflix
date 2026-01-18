@@ -396,6 +396,17 @@ export function SettingsPage() {
     (s) => s.setEnableSkipCredits,
   );
 
+  const enableDiscover = usePreferencesStore((s) => s.enableDiscover);
+  const setEnableDiscover = usePreferencesStore((s) => s.setEnableDiscover);
+
+  const enableFeatured = usePreferencesStore((s) => s.enableFeatured);
+  const setEnableFeatured = usePreferencesStore((s) => s.setEnableFeatured);
+
+  const enableDetailsModal = usePreferencesStore((s) => s.enableDetailsModal);
+  const setEnableDetailsModal = usePreferencesStore(
+    (s) => s.setEnableDetailsModal,
+  );
+
   const sourceOrder = usePreferencesStore((s) => s.sourceOrder);
   const setSourceOrder = usePreferencesStore((s) => s.setSourceOrder);
 
@@ -505,6 +516,9 @@ export function SettingsPage() {
     (s) => s.setEnableAutoResumeOnPlaybackError,
   );
 
+  const enableShuffle = usePreferencesStore((s) => s.enableShuffle);
+  const setEnableShuffle = usePreferencesStore((s) => s.setEnableShuffle);
+
   const account = useAuthStore((s) => s.account);
   const updateProfile = useAuthStore((s) => s.setAccountProfile);
   const updateDeviceName = useAuthStore((s) => s.updateDeviceName);
@@ -554,6 +568,7 @@ export function SettingsPage() {
     account ? account.profile : undefined,
     enableThumbnails,
     enableAutoplay,
+    enableSkipCredits,
     enableDiscover,
     enableFeatured,
     enableDetailsModal,
@@ -564,7 +579,7 @@ export function SettingsPage() {
     embedOrder,
     enableEmbedOrder,
     proxyTmdb,
-    enableSkipCredits,
+    enableShuffle,
     enableImageLogos,
     enableCarouselView,
     enableMinimalCards,
@@ -673,6 +688,7 @@ export function SettingsPage() {
           enableDoubleClickToSeek: state.enableDoubleClickToSeek.state,
           enableAutoResumeOnPlaybackError:
             state.enableAutoResumeOnPlaybackError.state,
+          enableShuffle: state.enableShuffle.state,
         });
       }
       if (state.deviceName.changed) {
@@ -730,6 +746,7 @@ export function SettingsPage() {
     setEnableAutoResumeOnPlaybackError(
       state.enableAutoResumeOnPlaybackError.state,
     );
+    setEnableShuffle(state.enableShuffle.state);
 
     if (state.profile.state) {
       updateProfile(state.profile.state);
@@ -788,6 +805,7 @@ export function SettingsPage() {
     setManualSourceSelection,
     setEnableDoubleClickToSeek,
     setEnableAutoResumeOnPlaybackError,
+    setEnableShuffle,
   ]);
   return (
     <SubPageLayout>
@@ -873,6 +891,8 @@ export function SettingsPage() {
               setEnableAutoResumeOnPlaybackError={
                 state.enableAutoResumeOnPlaybackError.set
               }
+              enableShuffle={state.enableShuffle.state}
+              setEnableShuffle={state.enableShuffle.set}
             />
           </div>
         )}

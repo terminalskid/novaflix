@@ -25,12 +25,12 @@ const tmdbIdPattern = /^tmdb:(\d+)(?::(movie|tv))?$/i;
 
 // Add specific search effects
 function applySearchEffects(query: string) {
-  if (query.toLowerCase().includes('breaking bad')) {
+  if (query.toLowerCase().includes("breaking bad")) {
     // Trigger breaking bad effect
-    console.log('Breaking Bad effect triggered');
-  } else if (query.toLowerCase().includes('we are legion')) {
+    console.log("Breaking Bad effect triggered");
+  } else if (query.toLowerCase().includes("we are legion")) {
     // Trigger anonymous hacker vibe effect
-    console.log('Anonymous hacker vibe effect triggered');
+    console.log("Anonymous hacker vibe effect triggered");
   }
 }
 
