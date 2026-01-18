@@ -392,9 +392,7 @@ export function SettingsPage() {
   const setEnableAutoplay = usePreferencesStore((s) => s.setEnableAutoplay);
 
   const enableSkipCredits = usePreferencesStore((s) => s.enableSkipCredits);
-  const setEnableSkipCredits = usePreferencesStore(
-    (s) => s.setEnableSkipCredits,
-  );
+  const setEnableSkipCredits = usePreferencesStore((s) => s.setEnableSkipCredits);
 
   const enableDiscover = usePreferencesStore((s) => s.enableDiscover);
   const setEnableDiscover = usePreferencesStore((s) => s.setEnableDiscover);
@@ -403,31 +401,19 @@ export function SettingsPage() {
   const setEnableFeatured = usePreferencesStore((s) => s.setEnableFeatured);
 
   const enableDetailsModal = usePreferencesStore((s) => s.enableDetailsModal);
-  const setEnableDetailsModal = usePreferencesStore(
-    (s) => s.setEnableDetailsModal,
-  );
+  const setEnableDetailsModal = usePreferencesStore((s) => s.setEnableDetailsModal);
 
   const sourceOrder = usePreferencesStore((s) => s.sourceOrder);
   const setSourceOrder = usePreferencesStore((s) => s.setSourceOrder);
 
   const enableSourceOrder = usePreferencesStore((s) => s.enableSourceOrder);
-  const setEnableSourceOrder = usePreferencesStore(
-    (s) => s.setEnableSourceOrder,
-  );
+  const setEnableSourceOrder = usePreferencesStore((s) => s.setEnableSourceOrder);
 
-  const lastSuccessfulSource = usePreferencesStore(
-    (s) => s.lastSuccessfulSource,
-  );
-  const setLastSuccessfulSource = usePreferencesStore(
-    (s) => s.setLastSuccessfulSource,
-  );
+  const lastSuccessfulSource = usePreferencesStore((s) => s.lastSuccessfulSource);
+  const setLastSuccessfulSource = usePreferencesStore((s) => s.setLastSuccessfulSource);
 
-  const enableLastSuccessfulSource = usePreferencesStore(
-    (s) => s.enableLastSuccessfulSource,
-  );
-  const setEnableLastSuccessfulSource = usePreferencesStore(
-    (s) => s.setEnableLastSuccessfulSource,
-  );
+  const enableLastSuccessfulSource = usePreferencesStore((s) => s.enableLastSuccessfulSource);
+  const setEnableLastSuccessfulSource = usePreferencesStore((s) => s.setEnableLastSuccessfulSource);
 
   // These are commented because the EmbedOrderPart is on the admin page and not on the settings page.
   const embedOrder = usePreferencesStore((s) => s.embedOrder);
@@ -438,16 +424,15 @@ export function SettingsPage() {
 
   // const setDisabledEmbeds = usePreferencesStore((s) => s.setDisabledEmbeds);
 
-  const enableDiscover = usePreferencesStore((s) => s.enableDiscover);
+  // Commenting out duplicate declaration
+  // const enableDiscover = usePreferencesStore((s) => s.enableDiscover);
   const setEnableDiscover = usePreferencesStore((s) => s.setEnableDiscover);
 
   const enableFeatured = usePreferencesStore((s) => s.enableFeatured);
   const setEnableFeatured = usePreferencesStore((s) => s.setEnableFeatured);
 
   const enableDetailsModal = usePreferencesStore((s) => s.enableDetailsModal);
-  const setEnableDetailsModal = usePreferencesStore(
-    (s) => s.setEnableDetailsModal,
-  );
+  const setEnableDetailsModal = usePreferencesStore((s) => s.setEnableDetailsModal);
 
   const enableImageLogos = usePreferencesStore((s) => s.enableImageLogos);
   const setEnableImageLogos = usePreferencesStore((s) => s.setEnableImageLogos);
@@ -456,65 +441,35 @@ export function SettingsPage() {
   const setProxyTmdb = usePreferencesStore((s) => s.setProxyTmdb);
 
   const enableCarouselView = usePreferencesStore((s) => s.enableCarouselView);
-  const setEnableCarouselView = usePreferencesStore(
-    (s) => s.setEnableCarouselView,
-  );
+  const setEnableCarouselView = usePreferencesStore((s) => s.setEnableCarouselView);
 
   const enableMinimalCards = usePreferencesStore((s) => s.enableMinimalCards);
-  const setEnableMinimalCards = usePreferencesStore(
-    (s) => s.setEnableMinimalCards,
-  );
+  const setEnableMinimalCards = usePreferencesStore((s) => s.setEnableMinimalCards);
 
-  const forceCompactEpisodeView = usePreferencesStore(
-    (s) => s.forceCompactEpisodeView,
-  );
-  const setForceCompactEpisodeView = usePreferencesStore(
-    (s) => s.setForceCompactEpisodeView,
-  );
+  const forceCompactEpisodeView = usePreferencesStore((s) => s.forceCompactEpisodeView);
+  const setForceCompactEpisodeView = usePreferencesStore((s) => s.setForceCompactEpisodeView);
 
-  const enableLowPerformanceMode = usePreferencesStore(
-    (s) => s.enableLowPerformanceMode,
-  );
-  const setEnableLowPerformanceMode = usePreferencesStore(
-    (s) => s.setEnableLowPerformanceMode,
-  );
+  const enableLowPerformanceMode = usePreferencesStore((s) => s.enableLowPerformanceMode);
+  const setEnableLowPerformanceMode = usePreferencesStore((s) => s.setEnableLowPerformanceMode);
 
   // These are commented because the NativeSubtitlesPart is accessable though the atoms caption style menu and not on the settings page.
-  const enableNativeSubtitles = usePreferencesStore(
-    (s) => s.enableNativeSubtitles,
-  );
-  // const setEnableNativeSubtitles = usePreferencesStore(
-  //   (s) => s.setEnableNativeSubtitles,
-  // );
+  const enableNativeSubtitles = usePreferencesStore((s) => s.enableNativeSubtitles);
+  // const setEnableNativeSubtitles = usePreferencesStore((s) => s.setEnableNativeSubtitles);
 
   const enableHoldToBoost = usePreferencesStore((s) => s.enableHoldToBoost);
-  const setEnableHoldToBoost = usePreferencesStore(
-    (s) => s.setEnableHoldToBoost,
-  );
+  const setEnableHoldToBoost = usePreferencesStore((s) => s.setEnableHoldToBoost);
 
   const homeSectionOrder = usePreferencesStore((s) => s.homeSectionOrder);
   const setHomeSectionOrder = usePreferencesStore((s) => s.setHomeSectionOrder);
 
-  const manualSourceSelection = usePreferencesStore(
-    (s) => s.manualSourceSelection,
-  );
-  const setManualSourceSelection = usePreferencesStore(
-    (s) => s.setManualSourceSelection,
-  );
+  const manualSourceSelection = usePreferencesStore((s) => s.manualSourceSelection);
+  const setManualSourceSelection = usePreferencesStore((s) => s.setManualSourceSelection);
 
-  const enableDoubleClickToSeek = usePreferencesStore(
-    (s) => s.enableDoubleClickToSeek,
-  );
-  const setEnableDoubleClickToSeek = usePreferencesStore(
-    (s) => s.setEnableDoubleClickToSeek,
-  );
+  const enableDoubleClickToSeek = usePreferencesStore((s) => s.enableDoubleClickToSeek);
+  const setEnableDoubleClickToSeek = usePreferencesStore((s) => s.setEnableDoubleClickToSeek);
 
-  const enableAutoResumeOnPlaybackError = usePreferencesStore(
-    (s) => s.enableAutoResumeOnPlaybackError,
-  );
-  const setEnableAutoResumeOnPlaybackError = usePreferencesStore(
-    (s) => s.setEnableAutoResumeOnPlaybackError,
-  );
+  const enableAutoResumeOnPlaybackError = usePreferencesStore((s) => s.enableAutoResumeOnPlaybackError);
+  const setEnableAutoResumeOnPlaybackError = usePreferencesStore((s) => s.setEnableAutoResumeOnPlaybackError);
 
   const enableShuffle = usePreferencesStore((s) => s.enableShuffle);
   const setEnableShuffle = usePreferencesStore((s) => s.setEnableShuffle);
