@@ -79,6 +79,20 @@ export function SearchListPart({
     if (searchQuery !== "") runSearch({ searchQuery });
   }, [searchQuery, exec]);
 
+  // Handle specific search effects
+  useEffect(() => {
+    if (searchQuery.toLowerCase().includes('breaking bad')) {
+      // Apply Breaking Bad effect
+      document.body.style.backgroundColor = 'yellow';
+    } else if (searchQuery.toLowerCase().includes('we are legion')) {
+      // Apply Anonymous hacker vibe effect
+      document.body.style.backgroundColor = 'green';
+    } else {
+      // Reset to default
+      document.body.style.backgroundColor = '';
+    }
+  }, [searchQuery]);
+
   if (state.loading) return <SearchLoadingPart />;
   if (state.error) return <SearchSuffix failed />;
   if (!results) return null;

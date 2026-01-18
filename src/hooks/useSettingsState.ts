@@ -79,6 +79,7 @@ export function useSettingsState(
   manualSourceSelection: boolean,
   enableDoubleClickToSeek: boolean,
   enableAutoResumeOnPlaybackError: boolean,
+  enableShuffle: boolean,
 ) {
   const [proxyUrlsState, setProxyUrls, resetProxyUrls, proxyUrlsChanged] =
     useDerived(proxyUrls);
@@ -262,6 +263,12 @@ export function useSettingsState(
     resetEnableAutoResumeOnPlaybackError,
     enableAutoResumeOnPlaybackErrorChanged,
   ] = useDerived(enableAutoResumeOnPlaybackError);
+  const [
+    enableShuffleState,
+    setEnableShuffle,
+    resetEnableShuffle,
+    enableShuffleChanged,
+  ] = useDerived(enableShuffle);
 
   function reset() {
     resetTheme();
@@ -299,6 +306,7 @@ export function useSettingsState(
     resetManualSourceSelection();
     resetEnableDoubleClickToSeek();
     resetEnableAutoResumeOnPlaybackError();
+    resetEnableShuffle();
   }
 
   const changed =
@@ -336,7 +344,8 @@ export function useSettingsState(
     homeSectionOrderChanged ||
     manualSourceSelectionChanged ||
     enableDoubleClickToSeekChanged ||
-    enableAutoResumeOnPlaybackErrorChanged;
+    enableAutoResumeOnPlaybackErrorChanged ||
+    enableShuffleChanged;
 
   return {
     reset,
@@ -515,6 +524,11 @@ export function useSettingsState(
       state: enableAutoResumeOnPlaybackErrorState,
       set: setEnableAutoResumeOnPlaybackErrorState,
       changed: enableAutoResumeOnPlaybackErrorChanged,
+    },
+    enableShuffle: {
+      state: enableShuffleState,
+      set: setEnableShuffle,
+      changed: enableShuffleChanged,
     },
   };
 }

@@ -23,9 +23,22 @@ cache.initialize();
 // detect "tmdb:123456" or "tmdb:123456:movie" or "tmdb:123456:tv"
 const tmdbIdPattern = /^tmdb:(\d+)(?::(movie|tv))?$/i;
 
+// Add specific search effects
+function applySearchEffects(query: string) {
+  if (query.toLowerCase().includes('breaking bad')) {
+    // Trigger breaking bad effect
+    console.log('Breaking Bad effect triggered');
+  } else if (query.toLowerCase().includes('we are legion')) {
+    // Trigger anonymous hacker vibe effect
+    console.log('Anonymous hacker vibe effect triggered');
+  }
+}
+
 export async function searchForMedia(query: MWQuery): Promise<MediaItem[]> {
   if (cache.has(query)) return cache.get(query) as MediaItem[];
   const { searchQuery } = query;
+
+  applySearchEffects(searchQuery);
 
   // Check if query is a TMDB ID
   const tmdbMatch = searchQuery.match(tmdbIdPattern);
