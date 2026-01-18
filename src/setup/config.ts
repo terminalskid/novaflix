@@ -131,11 +131,11 @@ export function conf(): RuntimeConfig {
     DMCA_EMAIL: getKey("DMCA_EMAIL"),
     ONBOARDING_CHROME_EXTENSION_INSTALL_LINK: getKey(
       "ONBOARDING_CHROME_EXTENSION_INSTALL_LINK",
-      "https://docs.pstream.mov/extension",
+      "https://docs.novaflix.mov/extension",
     ),
     ONBOARDING_FIREFOX_EXTENSION_INSTALL_LINK: getKey(
       "ONBOARDING_FIREFOX_EXTENSION_INSTALL_LINK",
-      "https://docs.pstream.mov/extension",
+      "https://docs.novaflix.mov/extension",
     ),
     ONBOARDING_PROXY_INSTALL_LINK: getKey("ONBOARDING_PROXY_INSTALL_LINK"),
     BACKEND_URLS: getKey("BACKEND_URL", BACKEND_URL)
